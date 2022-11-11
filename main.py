@@ -23,7 +23,7 @@ tables = [
             "name": "Cooking",
             "color": "#00FF00"
         },
-        "price": 123
+        "price": 123.55
     },
     {
         "name": "Table 2",
@@ -31,7 +31,7 @@ tables = [
             "name": "Cancel",
             "color": "#FF0000"
         },
-        "price": 456
+        "price": 456.32
     },
     {
         "name": "Table 3",
@@ -39,15 +39,15 @@ tables = [
             "name": "Done",
             "color": "#00FFFF"
         },
-        "price": 999
+        "price": 999.21
     },
     {
         "name": "Table 4",
         "status": {
-            "name": "Vlad Loh",
+            "name": "Cooking",
             "color": "#00FF00"
         },
-        "price": 777
+        "price": 777.12
     },
 ]
 

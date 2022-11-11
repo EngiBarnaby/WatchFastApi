@@ -22,28 +22,32 @@ tables = [
         "status": {
             "name": "Cooking",
             "color": "#00FF00"
-        }
+        },
+        "price": 123
     },
     {
         "name": "Table 2",
         "status": {
             "name": "Cancel",
             "color": "#FF0000"
-        }
+        },
+        "price": 456
     },
     {
         "name": "Table 3",
         "status": {
             "name": "Done",
             "color": "#00FFFF"
-        }
+        },
+        "price": 999
     },
     {
         "name": "Table 4",
         "status": {
-            "name": "Death",
+            "name": "Vlad Loh",
             "color": "#00FF00"
-        }
+        },
+        "price": 777
     },
 ]
 

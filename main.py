@@ -110,7 +110,10 @@ manager = ConnectionManager()
 async def change_table():
     for table in tables:
         table["status"] = statuses[random.randint(0, 3)]
-    await manager.broadcast({"tables": tables})
+    try:
+        await manager.broadcast({"tables": tables})
+    except:
+        pass
     return {'detail': "Статусы изменены"}
 
 

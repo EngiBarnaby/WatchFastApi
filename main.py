@@ -4,7 +4,7 @@ from typing import List
 
 import datetime
 
-from fastapi import FastAPI, WebSocket, Request
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -121,6 +121,11 @@ async def change_table():
 async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket)
     await manager.send_data({"tables": tables}, websocket)
-    while True:
-        data = await websocket.receive_json()
-        await manager.send_data({"tables": data}, websocket)
+    try:
+        while True:
+            data = await websocket.receive_json()
+            await manager.send_data({"tables": data}, websocket)
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+        await manager.send_data({"detail": "Вы отключились"})
+

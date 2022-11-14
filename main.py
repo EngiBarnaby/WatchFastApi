@@ -6,6 +6,7 @@ import datetime
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from pydantic import BaseModel
+from fastapi import status, HTTPException
 
 app = FastAPI()
 
@@ -81,7 +82,7 @@ async def auth_user(pin: Item):
         token = users[pin.pin]
         return {"token": token}
     except:
-        return {"detail": "Неправильный пин код"}
+        return HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Неправильный пин код")
 
 
 class ConnectionManager:
